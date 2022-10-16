@@ -7,11 +7,18 @@ import java.util.Optional;
 
 public interface StationService {
 
-    List<Station> findAll();
-    Optional<Station> findById(Integer id);
-    Station save(Station station);
+  List<Station> findAll();
 
-    void deleteById(Integer id);
+  Optional<Station> findById(Integer id);
 
-    void delete(Station station);
+  Station save(Station station);
+
+  void deleteById(Integer id);
+
+  void delete(Station station);
+
+  void getRecords();
+
+  Optional<Station> findByRecordId(String recordId);
+
 }
