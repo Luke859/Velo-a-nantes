@@ -14,7 +14,7 @@ import java.util.Date;
 @Setter
 @Entity
 
-@Table(name = "pump")
+@Table(name = "pumps")
 public class Pump implements Serializable {
 
     @Id
