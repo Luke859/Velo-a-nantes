@@ -1,7 +1,7 @@
 package com.formation.velo.service.impl;
 
-import com.formation.velo.api.OpenDataNantesClient;
-import com.formation.velo.api.OpenDataVeloNantes;
+import com.formation.velo.api.client.OpenDataNantesClient;
+import com.formation.velo.api.OpenData;
 import com.formation.velo.model.Station;
 import com.formation.velo.repository.StationRepository;
 import com.formation.velo.service.StationService;
@@ -63,10 +63,10 @@ public class StationServiceImpl implements StationService {
                         .build();
 
     OpenDataNantesClient client = retrofit.create(OpenDataNantesClient.class);
-    Call<OpenDataVeloNantes> openDataVeloNantesCall = client.getRecords();
+    Call<OpenData> openDataVeloNantesCall = client.getRecords();
 
     try{
-      OpenDataVeloNantes openDataVeloNantes = openDataVeloNantesCall.execute().body();
+      OpenData openDataVeloNantes = openDataVeloNantesCall.execute().body();
       log.info(openDataVeloNantes.toString());
 
       Arrays.stream(openDataVeloNantes.getRecords()).forEach(record -> {

@@ -1,4 +1,4 @@
-package com.formation.velo.api;
+package com.formation.velo.api.client.velo;
 
 import com.google.gson.annotations.SerializedName;
 import lombok.Getter;

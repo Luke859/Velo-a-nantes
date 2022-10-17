@@ -5,6 +5,6 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class OpenDataVeloNantes {
+public class OpenData {
     private Record[] records;
 }
