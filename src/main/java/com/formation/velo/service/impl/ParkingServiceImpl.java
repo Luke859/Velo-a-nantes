@@ -90,13 +90,20 @@ public class ParkingServiceImpl implements ParkingService{
                             .grpStatut(record.getField().getGrpStatut())
                             .grpIdentifiant(record.getField().getGrpIdentifiant())
                             .disponibilite(record.getField().getDisponibilite())
-                            .latitude(record.getField().getLocation()[0])
-                            .longitude(record.getField().getLocation()[1])
                             .idobj(record.getField().getIdobj())
                             .grpComplet(record.getField().getGrpComplet())
                             .grpExploitation(record.getField().getGrpExploitation())
                             .build();
 
+                            if (record.getField().getLocation() !=null) {
+                                newParking.setLatitude(record.getField().getLocation()[0]);
+                                newParking.setLongitude(record.getField().getLocation()[1]);
+                                save(newParking);
+                            } else {
+                                newParking.setLatitude(0.0);
+                                newParking.setLongitude(0.0);
+                                save(newParking);
+                            }
                     //on save
                     save(newParking);
                 }
