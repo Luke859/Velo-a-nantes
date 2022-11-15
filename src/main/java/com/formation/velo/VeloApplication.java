@@ -9,7 +9,6 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @EnableSwagger2
 @EnableScheduling
 public class VeloApplication {
-
 	public static void main(String[] args) {
 		SpringApplication.run(VeloApplication.class, args);
 	}

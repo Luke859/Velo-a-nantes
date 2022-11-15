@@ -1,6 +1,6 @@
 package com.formation.velo.service.impl;
 
-import com.formation.velo.api.client.OpenDataNantesClient;
+import com.formation.velo.api.client.velo.OpenDataNantesClient;
 import com.formation.velo.api.OpenData;
 import com.formation.velo.model.Station;
 import com.formation.velo.repository.StationRepository;
@@ -90,6 +90,7 @@ public class StationServiceImpl implements StationService {
           Station newStation = Station.builder()
                   .recordId(record.getRecordId())
                   .name(record.getField().getName())
+                  .address(record.getField().getAddress())
                   .availableBikes(record.getField().getAvailableBike())
                   .bikeStands(record.getField().getBikeStands())
                   .availableBikeStands(record.getField().getAvailableBikeStands())
