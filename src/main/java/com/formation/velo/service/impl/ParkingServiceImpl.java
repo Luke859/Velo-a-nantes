@@ -53,6 +53,7 @@ public class ParkingServiceImpl implements ParkingService{
     @Override
     public void getDatas() {
         // 1- appel a openData
+
         String baseUrl = "https://data.nantesmetropole.fr/";
         Retrofit retrofit = new Retrofit.Builder().baseUrl(baseUrl)
                 .addConverterFactory(GsonConverterFactory.create())
@@ -69,7 +70,7 @@ public class ParkingServiceImpl implements ParkingService{
                 Optional<Parking> parkingToUpdate = findByRecordId(record.getRecordId());
 
                 if(parkingToUpdate.isPresent()){
-                    //On update la station
+                    //On update le parking
                     parkingToUpdate.get()
                             .setGrpDisponible(record.getField().getGrpDisponible());
                     parkingToUpdate.get()
