@@ -67,7 +67,7 @@ public class ParkingServiceImpl implements ParkingService{
             log.info(openDataVeloNantes.toString());
 
             Arrays.stream(openDataVeloNantes.getRecords()).forEach(record -> {
-                Optional<Parking> parkingToUpdate = findByGroupId(record.getField().getGrpIdentifiant());
+                Optional<Parking> parkingToUpdate = findByRecordId(record.getRecordId());
 
                 if(parkingToUpdate.isPresent()){
                     //On update le parking
@@ -117,8 +117,8 @@ public class ParkingServiceImpl implements ParkingService{
     }
 
     @Override
-    public Optional<Parking> findByGroupId(String recordGroupId) {
-        return parkingRepository.findByGroupId(recordGroupId);
+    public Optional<Parking> findByRecordId(String recordId) {
+        return parkingRepository.findByRecordId(recordId);
     }
 
 }
