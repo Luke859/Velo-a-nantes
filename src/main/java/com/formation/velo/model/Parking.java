@@ -27,6 +27,5 @@ public class Parking  implements Serializable {
     private String grpExploitation;
     private Double latitude;
     private Double longitude;
-    private String recordId;
 
 }
