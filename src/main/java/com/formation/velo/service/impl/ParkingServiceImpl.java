@@ -76,6 +76,8 @@ public class ParkingServiceImpl implements ParkingService{
                     parkingToUpdate.get()
                             .setGrpDisponible(record.getField().getGrpDisponible());
                     parkingToUpdate.get()
+                            .setDisponibilite(record.getField().getDisponibilite());
+                    parkingToUpdate.get()
                             .setGrpStatut(record.getField().getGrpStatut());
                     parkingToUpdate.get()
                             .setGrpExploitation(record.getField().getGrpExploitation());
