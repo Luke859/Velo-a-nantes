@@ -19,5 +19,5 @@ public interface ParkingService {
 
     void getDatas();
 
-    Optional<Parking> findByRecordId(String recordId);
+    Optional<Parking> findByGroupId(String recordGroupId);
 }
