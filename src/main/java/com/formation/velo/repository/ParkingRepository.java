@@ -7,5 +7,5 @@ import org.springframework.stereotype.Repository;
 import java.util.Optional;
 @Repository
 public interface ParkingRepository extends JpaRepository<Parking, Integer>{
-    Optional<Parking> findByRecordId(String recordId);
+    Optional<Parking> findByGroupId(String groupId);
 }
