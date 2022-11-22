@@ -34,12 +34,6 @@ public class ParkingController {
         return ResponseEntity.ok(parking);
     }
 
-    @GetMapping("parkings/{id}")
-    public ResponseEntity<Optional<Parking>>getParkingbyId(@PathVariable Integer id){
-        Optional<Parking> parking = parkingService.findById(id);
-        return ResponseEntity.ok(parking);
-    }
-
     @DeleteMapping("parkings/delete/{id}")
     public ResponseEntity<String> delete(@PathVariable Integer id) {
         parkingService.deleteById(id);
