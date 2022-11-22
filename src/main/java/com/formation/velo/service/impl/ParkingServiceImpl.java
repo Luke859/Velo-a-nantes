@@ -72,6 +72,8 @@ public class ParkingServiceImpl implements ParkingService{
                 if(parkingToUpdate.isPresent()){
                     //On update le parking
                     parkingToUpdate.get()
+                            .setGrpIdentifiant(record.getField().getGrpIdentifiant());
+                    parkingToUpdate.get()
                             .setGrpDisponible(record.getField().getGrpDisponible());
                     parkingToUpdate.get()
                             .setGrpStatut(record.getField().getGrpStatut());
