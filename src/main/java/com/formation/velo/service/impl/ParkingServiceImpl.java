@@ -67,12 +67,10 @@ public class ParkingServiceImpl implements ParkingService{
             log.info(openDataVeloNantes.toString());
 
             Arrays.stream(openDataVeloNantes.getRecords()).forEach(record -> {
-                Optional<Parking> parkingToUpdate = findByRecordId(record.getRecordId());
+                Optional<Parking> parkingToUpdate = findByRecordId(record.getField().getGrpIdentifiant());
 
                 if(parkingToUpdate.isPresent()){
                     //On update le parking
-                    parkingToUpdate.get()
-                            .setGrpIdentifiant(record.getField().getGrpIdentifiant());
                     parkingToUpdate.get()
                             .setGrpDisponible(record.getField().getGrpDisponible());
                     parkingToUpdate.get()
@@ -89,11 +87,10 @@ public class ParkingServiceImpl implements ParkingService{
                 }else {
                     // on crée le parking
                     Parking newParking = Parking.builder()
-                            .recordId(record.getRecordId())
+                            .grpIdentifiant(record.getField().getGrpIdentifiant())
                             .grpDisponible(record.getField().getGrpDisponible())
                             .grpNom(record.getField().getGrpNom())
                             .grpStatut(record.getField().getGrpStatut())
-                            .grpIdentifiant(record.getField().getGrpIdentifiant())
                             .disponibilite(record.getField().getDisponibilite())
                             .idobj(record.getField().getIdobj())
                             .grpComplet(record.getField().getGrpComplet())
