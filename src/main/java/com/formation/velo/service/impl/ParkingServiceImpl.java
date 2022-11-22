@@ -67,7 +67,7 @@ public class ParkingServiceImpl implements ParkingService{
             log.info(openDataVeloNantes.toString());
 
             Arrays.stream(openDataVeloNantes.getRecords()).forEach(record -> {
-                Optional<Parking> parkingToUpdate = findByRecordId(record.getField().getGrpIdentifiant());
+                Optional<Parking> parkingToUpdate = findByRecordId(record.getRecordId());
 
                 if(parkingToUpdate.isPresent()){
                     //On update le parking
