@@ -91,7 +91,6 @@ public class ParkingServiceImpl implements ParkingService{
                             .grpDisponible(record.getField().getGrpDisponible())
                             .grpNom(record.getField().getGrpNom())
                             .grpStatut(record.getField().getGrpStatut())
-                            .grpIdentifiant(record.getField().getGrpIdentifiant())
                             .disponibilite(record.getField().getDisponibilite())
                             .idobj(record.getField().getIdobj())
                             .grpComplet(record.getField().getGrpComplet())
